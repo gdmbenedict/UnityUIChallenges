@@ -1,1 +1,7 @@
-IMAGE, Image Name, Author/Website, URL
+IMAGE, Charles Barkley -Thumb- 0a40b65232a86b, pngfind.com, https://www.pngfind.com/mpng/iTRhmii_charles-barkley-thumb-0a40b65232a86b-charles-barkley-hd-png/
+
+IMAGE, Charles Barkley's Cookie Eating Challenge [VIDEO], 1045theteam.com, https://1045theteam.com/charles-barkleys-cookie-eating-challenge-video/
+
+IMAGE, —Pngtree—delicious chocolate chip cookie_5736362, pngtree.com, https://pngtree.com/freepng/delicious-chocolate-chip-cookie_5736362.html
+
+FONT, KAPH font, GGBotNet, https://ggbot.itch.io/kaph-font
