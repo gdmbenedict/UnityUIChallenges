@@ -2,8 +2,10 @@ IMAGE, Charles Barkley -Thumb- 0a40b65232a86b, pngfind.com, https://www.pngfind.
 
 IMAGE, Charles Barkley's Cookie Eating Challenge [VIDEO], 1045theteam.com, https://1045theteam.com/charles-barkleys-cookie-eating-challenge-video/
 
-IMAGE, —Pngtree—delicious chocolate chip cookie_5736362, pngtree.com, https://pngtree.com/freepng/delicious-chocolate-chip-cookie_5736362.html
+IMAGE, —Pngtree—delicious chocolate chip cookie_5736362, aslbertosammao, https://pngtree.com/freepng/delicious-chocolate-chip-cookie_5736362.html
 
 IMAGE, istockphoto-1369321840-612x612, Sonya_Illustration, https://www.istockphoto.com/vector/vector-illustration-of-chocolate-chip-cookie-gm1369321840-439102562
+
+IMAGE,  —Pngtree—three chocolate chips cookies isolated_5739793, wekraf, https://pngtree.com/freepng/three-chocolate-chips-cookies-isolated-on-transparent-background_5739793.html
 
 FONT, KAPH font, GGBotNet, https://ggbot.itch.io/kaph-font

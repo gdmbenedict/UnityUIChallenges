@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class UIManager : MonoBehaviour
     public Slider blueSlider;
     public Slider alphaSlider;
 
+    [Header("Radial Cooldown")]
+    public Button cooldownButton;
+    public Image cooldownRadial;
+    [SerializeField] private float timerValue =3f;
+    private float cooldownTimer;
+
     //start function called on first frame
     void Start()
     {
@@ -39,6 +46,8 @@ public class UIManager : MonoBehaviour
         greenSlider.value = 1;
         blueSlider.value = 1;
         alphaSlider.value = 1;
+
+        cooldownRadial.enabled = false;
     }
 
     // Update is called once per frame
@@ -46,6 +55,7 @@ public class UIManager : MonoBehaviour
     {
         PrintScore();
         UpdateRGBPicture();
+        IncrementTimer();
     }
 
     //Score Handling functions
@@ -121,5 +131,38 @@ public class UIManager : MonoBehaviour
         color.a = alphaSlider.value;
 
         rgbImage.color = color;
+    }
+
+
+    //Cooldown Button
+    public void DisableButton()
+    {
+        cooldownButton.interactable = false;
+        cooldownTimer = timerValue;
+        cooldownRadial.enabled = true;
+    }
+
+    private void IncrementTimer()
+    {
+        if (!cooldownButton.interactable)
+        {
+            cooldownTimer -= Time.deltaTime;
+
+            if (cooldownTimer <= 0f)
+            {
+                cooldownButton.interactable=true;
+                cooldownRadial.enabled = false;
+            }
+        }
+
+        ModifyRadial();
+    }
+
+    private void ModifyRadial()
+    {
+        if (cooldownTimer > 0f)
+        {
+            cooldownRadial.fillAmount = (cooldownTimer / timerValue);
+        }
     }
 }
