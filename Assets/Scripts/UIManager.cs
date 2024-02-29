@@ -35,6 +35,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float timerValue =3f;
     private float cooldownTimer;
 
+    [Header("Dropdown")]
+    public GameObject subtitle;
+    [SerializeField] float scaleChange = 0.15f;
+    [SerializeField] float speed =2f;
+
     //start function called on first frame
     void Start()
     {
@@ -48,6 +53,9 @@ public class UIManager : MonoBehaviour
         alphaSlider.value = 1;
 
         cooldownRadial.enabled = false;
+
+        //sets subtitle to random game name
+        HandleDropDown(Random.Range(0, 5));
     }
 
     // Update is called once per frame
@@ -56,6 +64,7 @@ public class UIManager : MonoBehaviour
         PrintScore();
         UpdateRGBPicture();
         IncrementTimer();
+        AnimateSubtitle();
     }
 
     //Score Handling functions
@@ -142,6 +151,7 @@ public class UIManager : MonoBehaviour
         cooldownRadial.enabled = true;
     }
 
+    //function for handling timer for button disable
     private void IncrementTimer()
     {
         if (!cooldownButton.interactable)
@@ -162,7 +172,55 @@ public class UIManager : MonoBehaviour
     {
         if (cooldownTimer > 0f)
         {
+            //sets fill amount to correct ratio according to time remaining
             cooldownRadial.fillAmount = (cooldownTimer / timerValue);
         }
+    }
+
+    //Dropdown Menu
+    public void HandleDropDown(int input)
+    {
+        string gameName = "";
+
+        //sets the name equal to the connected dropdown option
+        switch(input)
+        {
+            case 0:
+                gameName = "Super Cool Game";
+                break;
+
+            case 1:
+                gameName = "Cool Game 64";
+                break;
+
+            case 2:
+                gameName = "Cool Game";
+                break;
+
+            case 3:
+                gameName = "UI Demo";
+                break;
+
+            case 4:
+                gameName = "Menu UI Demo";
+                break;
+
+            case 5:
+                gameName = "UI Sim 2024";
+                break;
+
+            default:
+                gameName = "Everything";
+                break;
+        }
+
+        subtitle.GetComponent<TextMeshProUGUI>().SetText("Better Than: " + gameName + "!!!");
+    } 
+
+    //dynamically changes the scale of a UI element
+    private void AnimateSubtitle()
+    {
+        float scale = 1 + scaleChange * (Mathf.Sin(Time.time * speed));
+        subtitle.GetComponent<RectTransform>().localScale = new Vector3(scale, scale);
     }
 }
